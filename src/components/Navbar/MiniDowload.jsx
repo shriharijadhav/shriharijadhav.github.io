@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Flex, Text, IconButton, useColorModeValue } from '@chakra-ui/react';
+import { Button, Flex, Text, IconButton, useColorModeValue, Box } from '@chakra-ui/react';
 import { DownloadIcon } from '@chakra-ui/icons';
 
 const MiniDownload = ({onClose}) => {
@@ -23,27 +23,25 @@ const MiniDownload = ({onClose}) => {
 
   return (
     <Button
-      onClick={handleDownload}
-      bg={bgColor}
-      color={color}
-      _hover={{
-        bg: hoverBgColor,
-        color: hoverColor,
-      }}
-      padding={'0px 10px'}
-      pl={'20px'}
-      rounded={'lg'}
-      fontSize={['md', 'lg', 'xl', 'xl']}
-    >
-      <Flex justifyContent={'space-between'} alignItems={'center'}>
-        <Text>Resume</Text>
-        <IconButton
-          aria-label="Download Resume"
-          variant={'ghost'}
-          icon={<DownloadIcon />}
-        />
-      </Flex>
-    </Button>
+    onClick={handleDownload}
+    bg={bgColor}
+    color={color}
+    _hover={{
+      bg: hoverBgColor,
+      color: hoverColor,
+    }}
+    padding={'0px 10px'}
+    pl={'20px'}
+    rounded={'lg'}
+    fontSize={['md', 'lg', 'xl', 'xl']}
+  >
+    <Flex justifyContent={'space-between'} alignItems={'center'}>
+      <Text>Resume</Text>
+      <Box as="span" ml={2}>
+        <DownloadIcon />
+      </Box>
+    </Flex>
+  </Button>
   );
 };
 
