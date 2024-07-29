@@ -39,7 +39,7 @@ const ContactMe = () => {
           isClosable: true,
         });
       }, (err) => {
-        console.log('FAILED...', err);
+        // console.log('FAILED...', err);
         setIsLoading(false);
         toast({
           title: "Message Failed.",
