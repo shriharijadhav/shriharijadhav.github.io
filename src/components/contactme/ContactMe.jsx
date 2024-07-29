@@ -28,7 +28,7 @@ const ContactMe = () => {
 
     emailjs.send('service_90m6t3h', 'template_65q0xbk', formData, 'KeM66rbZCD_kb2YQ7')
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
+        // console.log('SUCCESS!', response.status, response.text);
         setIsLoading(false);
         setIsSubmitted(true);
         toast({
