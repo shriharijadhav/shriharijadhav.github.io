@@ -35,7 +35,7 @@ const Navbar = () => {
     <Flex className='glass' w={'100%'}   justify='center'  position={'fixed'} top={'0px'} id='nav-menu' zIndex={10}>
         <Flex   justify='space-between' align='center' w={['90%','90%','80%','80%']}>
                 <Flex>
-                <Text _hover={{ cursor: 'pointer' }} padding={['1rem 1rem', '1rem', '1rem 0rem', '1rem 0rem', '1rem 0rem', '1rem 0rem']} fontSize={['md', 'lg', 'xl', 'xl']}>Portfolio</Text>
+                <Text _hover={{ cursor: 'pointer' }} padding={['1rem 1rem', '1rem', '1rem 0rem', '1rem 0rem', '1rem 0rem', '1rem 0rem']} fontSize={['md', 'lg', 'xl', 'xl']} color={'#EDBB3C'}>Shrihari Jadhav</Text>
                 </Flex>
               
                 <Flex  justifyContent={'center'} alignItems={'center'}  gap={'20px'}>
