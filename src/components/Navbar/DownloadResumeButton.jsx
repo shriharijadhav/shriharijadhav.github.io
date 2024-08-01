@@ -10,12 +10,12 @@ const DownloadResumeButton = () => {
 
   const handleDownload = () => {
     const viewLink = document.createElement('a');
-    viewLink.href = 'https://drive.google.com/file/d/1NV4eDK4-tcuLbLx_jaEa_NBB5zTQi6PM/view?usp=drive_link'; // View link
+    viewLink.href = 'https://drive.google.com/file/d/1h-N8VZacIkqn59yW8Rq8q5NP_HtlrEYU/view?usp=sharing'; // View link
     viewLink.target = '_blank';
     viewLink.click();
 
     const downloadLink = document.createElement('a');
-    downloadLink.href = 'https://drive.google.com/uc?export=download&id=1NV4eDK4-tcuLbLx_jaEa_NBB5zTQi6PM'; // Direct download link
+    downloadLink.href = 'https://drive.google.com/uc?export=download&id=1h-N8VZacIkqn59yW8Rq8q5NP_HtlrEYU'; // Direct download link
     downloadLink.download = 'Shrihari_Jadhav_resume.pdf';
     downloadLink.click();
   };
