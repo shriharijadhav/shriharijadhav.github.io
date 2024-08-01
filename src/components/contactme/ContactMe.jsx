@@ -1,9 +1,63 @@
 import React, { useState } from 'react';
-import { Box, Button, Flex, FormControl, FormLabel, Input, Textarea, useToast, VStack, Heading, Text, Spinner } from '@chakra-ui/react';
+import { Box, Button, Flex, FormControl, FormLabel, Input, Textarea, useToast, VStack, Heading, Text, Spinner, Image } from '@chakra-ui/react';
 import emailjs from 'emailjs-com';
 import ContactCard from './ContactCard';
 
+
+import call from '../../images/icons/call2.svg'
+import email from '../../images/icons/email.svg'
+import linkedin from '../../images/icons/linkedin.svg'
+import githubIcon from '../../images/icons/github3.svg'
+import location from '../../images/icons/location.svg'
+import SingleButton from './SingleButton';
+
+
+
 const ContactMe = () => {
+
+    const allSkills =[
+        {
+            id:1,
+            title:'+919970758021',
+            href:'tel:+919970758021',
+            src:call,
+            width:'20px',
+            colorScheme: 'gray',
+            idOfLink:'contact-phone'
+        }
+        , {
+            id:2,
+            title:'mr.shrihari212@gmail.com',
+            href:'mailto:mr.shrihari212@gmail.com',
+            src:email,
+            width:'20px',
+            colorScheme: 'gray',
+            idOfLink:'contact-email'
+
+        }
+        , {
+            id:3,
+            title:'LinkedIn',
+            href:'https://www.linkedin.com/in/shriharijadhav126/',
+            src:linkedin,
+            width:'20px',
+            colorScheme: 'gray',
+            idOfLink:'contact-linkedin'
+
+        }
+        , {
+            id:4,
+            title:'GitHub',
+            href:'https://github.com/shriharijadhav',
+            src:githubIcon,
+            width:'20px',
+            colorScheme: 'gray',
+            idOfLink:'contact-github'
+
+        }
+    ]
+
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -55,15 +109,42 @@ const ContactMe = () => {
 
   return (
     <Flex direction="column" align="center" justify="center" p={'30px 0px'} >
+
+
+    <Flex justifyContent={'center'} alignItems={'center'} direction={'column'} w={'100%'} gap={'20px'} p={'20px 0px'} data-aos="slide-right" pb={'50px'}>
+    <Text fontSize={['x-large','x-large','x-large','x-large']} fontWeight={500}>Social Profiles </Text> 
+    <Text  pt={'0px'}  fontSize={'sm'} pb={'20px'}>( Click to open/dial )</Text>
+    <Flex w={'90%'} gap={'20px'} justifyContent={'center'} alignItems={'center'}  flexWrap={'wrap'}  >
+        {
+            allSkills.map(item=>(                
+                        <SingleButton key={item.id} item={item}/>
+            )
+            
+            )
+        }
+    </Flex>
+    </Flex>
+
+    <Flex justifyContent={'center'} alignItems={'center'} direction={'column'} w={'100%'} gap={'20px'} p={'20px 0px'} data-aos="slide-right" pb={'30px'}>
+    <Text fontSize={['x-large','x-large','x-large','x-large']} fontWeight={500}>Address</Text> 
+    <Flex w={'100%'} gap={'10px'} justifyContent={'center'} alignItems={'center'}  flexWrap={'wrap'}  >
+        <Image w={'30px'} src={location} alt={'Address'} />
+        <Text fontSize={'xl'}>Pune, Maharashtra</Text>
+    </Flex>
+    </Flex>
+
       <Box w={{ base: '100%', md: '80%', lg: '50%' }} p={6}>
-        <Heading as="h3" size="lg" mb={6} textAlign="center" data-aos="zoom-in-up" data-aos-delay="500" >Contact Me</Heading>
+        <Heading as="h3" size="lg" mb={6} textAlign="center" data-aos="zoom-in-up" data-aos-delay="500" pb={'20px'}>Contact Me</Heading>
+
+       
+
         {isLoading ? (
           <Flex justifyContent="center" alignItems="center" height="200px">
             <Spinner size="xl" />
           </Flex>
         ) : !isSubmitted ? (
-          <form onSubmit={handleSubmit} data-aos="flip-down"  data-aos-delay="600" >
-            <VStack spacing={4}>
+          <form   onSubmit={handleSubmit} data-aos="flip-down"  data-aos-delay="600" >
+            <VStack spacing={4} p={'20px'} borderRadius={'lg'} border={'1px solid #3F444E'}>
               <FormControl id="name" isRequired>
                 <FormLabel>Name</FormLabel>
                 <Input
@@ -109,7 +190,7 @@ const ContactMe = () => {
             </VStack>
           </form>
         ) : (
-          <Box textAlign="center" p={4}>
+          <Box  data-aos="flip-down"  textAlign="center" p={4}>
             <Heading as="h4" size="md">Thank you for your message!</Heading>
             <Text mb={'50px'}>I'll get back to you shortly.</Text>
             <ContactCard/>

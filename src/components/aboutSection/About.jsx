@@ -13,13 +13,14 @@ const About = () => {
   justifyContent="center"
   alignItems="center"
   p="40px 0px"
+  className='about section'
 >
   <Flex w="90%" direction="column" justifyContent="center" alignItems="center" gap="20px">
     <Text fontSize="4xl" fontWeight="bold" mb="4" data-aos="zoom-in">About Me</Text>
     <Flex w={'100%'} p={'10px 0px'} direction={['column','column','row','row']} pb={'20px'}   alignItems={'center'} data-aos="fade-up-right">
-        <Image p={'10px 20px'}  borderRight={["none","none","5px solid gray","5px solid gray"]}  w={'250px'} src={myImage} />
+        <Image p={'10px 20px'}  borderRight={["none","none","5px solid gray","5px solid gray"]} id='home-img'  w={'250px'} src={myImage} />
         <Flex direction={'column'} w={['100%','100%','100%','35%']} p={'10px 5px'} >
-            <Text borderLeft={["5px solid gray","5px solid gray","none","none"]} fontSize={['2xl','3xl','4xl','4xl']} fontWeight={'700'} pl="10px" pb={'10px'}>
+            <Text id='user-detail-name' borderLeft={["5px solid gray","5px solid gray","none","none"]} fontSize={['2xl','3xl','4xl','4xl']} fontWeight={'700'} pl="10px" pb={'10px'}>
             Shrihari Jadhav
             </Text>
             <Text fontSize={'larger'} fontWeight={'700'} pl="10px" pb={'5px'}>
@@ -30,7 +31,7 @@ const About = () => {
             </Text>
         </Flex>
     </Flex>
-    <Stack spacing={3} data-aos="fade-up-left">
+    <Stack spacing={3} data-aos="fade-up-left" id='user-detail-intro'>
       <Text fontSize="large" >
         <Text as={'span'}></Text><Badge  fontSize="medium" colorScheme="teal" wordBreak="break-word">FULL STACK WEB DEVELOPER</Badge> with nearly 2 years as a System Engineer at Tata Consultancy Services.
       </Text>
