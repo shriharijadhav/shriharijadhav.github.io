@@ -59,7 +59,7 @@ function App() {
         <Skills />
       </Box>
       <Box  className='section' id="statistics">
-        <Statistics username="shriharijadhav" />
+        <Statistics username="shrihariatpepsales" />
       </Box>
       <Box  className='section' id="contact">
         <ContactMe />

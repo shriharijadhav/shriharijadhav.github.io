@@ -3,12 +3,21 @@ import { Box, Image, Text, Button, SimpleGrid, Link, Icon } from '@chakra-ui/rea
 import { ExternalLinkIcon } from '@chakra-ui/icons'; // Make sure to import icons
 import { FaGithub } from "react-icons/fa";
 
+import realEstateApp from '../../images/realEstateApp.png'
 import digitalInvitaions from '../../images/digitalinvitations.png'
 import ytMusicPlayer from '../../images/ytmusicplayer.png'
 import groupon from '../../images/groupon.png'
 import pharmeasy from '../../images/pharmeasy.png'
 
 const projects = [
+  {
+    id: 31,
+    title: 'Property investment company',
+    image: realEstateApp,
+    description: 'A property listing app with an infinite scrolling, wishlist functionality, and interactive features like image carousels and Google Map integration. Build only for mobile and tablet views offering seamless browsing experience.',
+    demoLink: 'https://propsoch-assignment-th4a.vercel.app/',
+    repoLink: 'https://github.com/shriharijadhav/propsoch-assignment'
+  },
   {
     id: 1,
     title: 'Digital Invitations',
